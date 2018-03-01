@@ -3,17 +3,16 @@ class getSum
    
     public static int getSum_new(int a, int b)
     {
-        int temp_sum =  a ^ b, advance = (a & b) <<1, temp_val = 0;
+        int temp_sum =  a ^ b, carry = (a & b) <<1, overlap = 0;
         
         
-        while((temp_sum & advance) != 0)
+        while((overlap = (temp_sum & carry)) != 0)
         {
-            temp_val = temp_sum;
-            temp_sum ^= advance;
-            advance = (temp_val & advance) << 1;
+            temp_sum ^= carry;
+            carry = overlap << 1;
         }
         
-        return (temp_sum ^ advance);
+        return (temp_sum ^ carry);
     }
 
     
