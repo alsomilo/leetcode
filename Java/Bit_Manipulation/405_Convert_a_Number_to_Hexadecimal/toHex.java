@@ -5,9 +5,8 @@ class toHex
     public static String toHex_new(int num) 
     {
     	String ret = "";
-		int last_four_bits = 0, temp = 0;
+		int last_four_bits = 0;
 		char   curr_char;
-		boolean is_negative = false;
 		Stack<String> stack = new Stack<String>();
 		
 		if(num == 0)
@@ -16,14 +15,8 @@ class toHex
 		}
 		else
 		{
-			if(num < 0)
-			{
-				is_negative = true;
-				temp = (num & 0xF);
-				num >>>= 4;				
-			}
 			
-			while(num > 0)
+			while(num != 0)
 			{
 				last_four_bits = (num & 0xF);
 				curr_char = (last_four_bits >= 10)? ((char)('a' + (last_four_bits-10))):((char)('0' + last_four_bits));
@@ -34,11 +27,6 @@ class toHex
 			while(!stack.empty())
 			{
 				ret += stack.pop();
-			}
-			
-			if(is_negative)
-			{
-				ret += (temp >= 10)? ((char)('a' + (temp-10))):((char)('0' + temp));
 			}
 				
 		}
