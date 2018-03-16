@@ -29,7 +29,7 @@ class integerReplacement
 		}
 		else
 		{
-			System.out.println("n <= 0! must be positive");
+			System.out.println("n <= 0! must be positive!!");
 		}
 		
 		return counter;
