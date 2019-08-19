@@ -5,3 +5,5 @@ considering we are given the array here, that is an *INDICATION* to use previous
           /* array[i] = array[i/2] + i%2*/
           /* /2 means >> 1, similarly, /4 means >> 2, /8 means >> 3, /n means >>log(n)
              %2 means &1, similarly , %4 means &3, %8 means &7, so %n means &(n-1)*/ 
+			 
+			 test
