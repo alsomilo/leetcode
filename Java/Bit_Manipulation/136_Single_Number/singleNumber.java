@@ -17,6 +17,8 @@ Input: [4,1,2,1,2]
 Output: 4
 */
 
+//081919: XOR everything to find the single one without a pair
+
 class singleNumber 
 {
     public static int singleNumber_now(int[] nums)
