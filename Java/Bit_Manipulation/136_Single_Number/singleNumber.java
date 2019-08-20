@@ -18,6 +18,7 @@ Output: 4
 */
 
 //081919: XOR everything to find the single one without a pair
+//test
 
 class singleNumber 
 {
