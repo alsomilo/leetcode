@@ -25,6 +25,10 @@ class singleNumber
         for(Integer each : set)
         {
             array[i++] = each;
+			if(i == 2)
+			{
+				break;
+			}
         }
 
         return array;
