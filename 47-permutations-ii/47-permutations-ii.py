@@ -15,11 +15,9 @@ class Solution:
             prevNum = -101
             for i in range(len(nums)):
                 
-                if prevNum == nums[i]:
-                    continue
-                
-                prevNum = nums[i]
-                dfs( nums[:i]+nums[i+1:] , path + [nums[i]], res)
+                if prevNum != nums[i]:    #cut branch logic: avoid processing branch for the node which has same value with prevNum  
+                    prevNum = nums[i]
+                    dfs( nums[:i]+nums[i+1:] , path + [nums[i]], res)
                 
                 
         dfs(nums, [], res)
