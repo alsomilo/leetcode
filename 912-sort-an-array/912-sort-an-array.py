@@ -28,7 +28,7 @@ class Solution:
         return quicksort(nums)
         '''
         
-        
+        '''
         def mergeSort(nums):
             if len(nums) == 0 or len(nums) == 1:
                 return nums
@@ -54,7 +54,45 @@ class Solution:
             return ret
         
         return mergeSort(nums)
-                
+        '''         
+        
+        temp = nums[:]
+        
+        def mergeSort(nums, start, end):
+            
+            if start == end:
+                return
+            
+            
+            mid = (start+end)//2
+            
+            mergeSort(nums, start, mid)
+            mergeSort(nums, mid+1, end)
+            
+            for i in range(start, end+1):
+                temp[i] = nums[i]
+             
+            i,j,p = start, mid+1, start
+            
+            while p <= end:
+                if i == mid+1:
+                    nums[p] = temp[j]
+                    j+=1
+                elif j == end+1:
+                    nums[p] = temp[i]
+                    i+=1
                     
+                elif temp[i] < temp[j]:
+                    nums[p] = temp[i]
+                    i+=1
+                else:
+                    nums[p] = temp[j]
+                    j+=1
+                
+                p+=1
+
+        
+        mergeSort(nums, 0 , len(nums)-1)
+        return nums
             
             
