@@ -46,13 +46,13 @@ class Codec:
             if not queue:
                 return None
             
-            if queue[0] == '#':
-                queue.popleft()
-                #print(queue)
+            
+            rootVal = queue.popleft()
+            
+            if rootVal == '#':
                 return None
             
-            root = TreeNode(int(queue[0]))
-            queue.popleft()
+            root = TreeNode(int(rootVal))
             #print(queue)
             root.left = dfs(queue)
             root.right = dfs(queue)
