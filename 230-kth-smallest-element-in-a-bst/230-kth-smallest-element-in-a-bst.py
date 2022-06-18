@@ -32,9 +32,9 @@ class Solution:
             self.count+=1
             if self.count == k:
                 self.res = root.val
-            
+                return
             dfs(root.right)
-            return
+            
         
         dfs(root)
 
