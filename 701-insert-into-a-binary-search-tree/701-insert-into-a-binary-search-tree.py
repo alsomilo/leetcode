@@ -7,7 +7,7 @@
 class Solution:
     def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         
-        
+        '''
         def dfs(root):
             if not root:
                 return
@@ -31,4 +31,17 @@ class Solution:
         
         dfs(root)
         return root
+        '''
+        
+        def dfs(root):
+            if not root:
+                return TreeNode(val)
+            
+            if root.val < val:
+                root.right = dfs(root.right)
+            else:
+                root.left = dfs(root.left)
+            
+            return root
                 
+        return dfs(root)
