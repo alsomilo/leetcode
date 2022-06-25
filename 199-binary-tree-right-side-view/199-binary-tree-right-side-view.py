@@ -8,6 +8,7 @@ from collections import deque
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         
+        '''
         if not root:
             return []
         
@@ -35,4 +36,17 @@ class Solution:
         
         return res
         
+        '''
         
+        
+        def dfs(root):
+            if not root:
+                return []
+            
+            left = dfs(root.left)
+            right = dfs(root.right)
+            
+            return [root.val] + right + left[len(right):]
+        
+        
+        return dfs(root)
