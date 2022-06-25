@@ -38,7 +38,7 @@ class Solution:
         
         '''
         
-        
+        '''
         def dfs(root):
             if not root:
                 return []
@@ -50,3 +50,20 @@ class Solution:
         
         
         return dfs(root)
+        '''
+        
+        view = []
+        
+        def dfs(root,depth):
+            if not root:
+                return
+            
+            if depth == len(view):
+                view.append(root.val)
+                
+            dfs(root.right, depth+1)
+            dfs(root.left, depth+1)
+        
+        dfs(root, 0)
+        
+        return view
