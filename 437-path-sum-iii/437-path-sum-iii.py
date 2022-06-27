@@ -7,7 +7,7 @@
 class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
         
-        
+        '''
         self.preSum = 0
         self.stat = {}
         self.stat[0] = 1  #do not miss the 0 entry in preSum!!
@@ -33,5 +33,32 @@ class Solution:
             self.preSum -= root.val
             
         dfs(root)
+        
+        return self.res
+        '''
+        
+        self.res = 0
+        
+        self.stat = {}
+        self.stat[0] = 1  #do not miss the 0 entry in preSum!!
+        
+        def dfs(root, preSum):
+            if not root:
+                return
+            
+            preSum += root.val
+            
+            self.res += self.stat.get(preSum - targetSum, 0)
+            
+            
+            self.stat[preSum] = self.stat.get(preSum, 0) + 1           
+            
+            
+            dfs(root.left, preSum)
+            dfs(root.right, preSum)
+            
+            self.stat[preSum] -= 1
+            
+        dfs(root, 0)
         
         return self.res
