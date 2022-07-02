@@ -11,4 +11,4 @@ class Solution:
         if n % 2:
             return x * self.myPow(x, n-1)
         
-        return self.myPow(x*x, n//2)
+        return self.myPow(x*x, n//2)  # x**n => (x**2) ** (n//2), pls note that 2 * 1/2 cancel each other   
