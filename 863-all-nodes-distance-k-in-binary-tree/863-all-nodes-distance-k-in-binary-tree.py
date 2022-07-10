@@ -35,6 +35,9 @@ class Solution:
             for i in range(currLen):
                 currNode = fifo.popleft()
                 
+                if distance > k:
+                    break
+                
                 if distance == k:
                     res.append(currNode.val)
                     
