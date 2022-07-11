@@ -3,6 +3,9 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        
+        #ref: https://www.youtube.com/watch?v=quAS1iydq7U&ab_channel=BackToBackSWE
+        
         i = len(nums)-1
         
         while i > 0 and nums[i-1] >= nums[i]:
