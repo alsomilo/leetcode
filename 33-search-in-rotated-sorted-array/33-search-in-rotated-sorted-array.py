@@ -3,6 +3,11 @@ class Solution:
         
         lo,hi = 0,len(nums)-1
         
+        if nums[0] == target:
+            return 0
+        if nums[-1] == target:
+            return len(nums)-1
+        
         while lo < hi:
             mid = (lo+hi)//2
             
@@ -22,10 +27,7 @@ class Solution:
         
         if nums[lo] == target:
             return lo
-        if nums[0] == target:
-            return 0
-        if nums[-1] == target:
-            return len(nums)-1
+
         
         if nums[-1] > target:
             
