@@ -31,7 +31,7 @@ class Solution:
         
         if nums[-1] > target:
             
-            lo,hi = lo+1, len(nums)-1
+            lo,hi = lo+1, len(nums)-2
             
             while lo <= hi:
                 mid = (lo+hi)//2
