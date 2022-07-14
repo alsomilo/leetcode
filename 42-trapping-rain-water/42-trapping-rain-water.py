@@ -20,7 +20,7 @@ class Solution:
         return res
         '''
         
-        
+        '''memo
         leftMax = [height[0]]*len(height)
         rightMax = [height[-1]]*len(height)
         
@@ -38,4 +38,25 @@ class Solution:
         for i in range(len(height)):
             res += min(leftMax[i], rightMax[i])-height[i]
             
+        return res
+        '''
+        
+        
+        left, right = 0, len(height)-1
+        res = 0
+        leftMax = rightMax = 0
+        
+        while left < right:
+            leftMax = max(leftMax, height[left])
+            rightMax = max(rightMax, height[right])
+            
+            #res += min(leftMax, rightMax) - height[left] if leftMax < rightMax else height[right]
+            
+            if leftMax < rightMax:
+                res += leftMax - height[left]
+                left += 1
+            else:
+                res += rightMax - height[right]
+                right -= 1
+                
         return res
