@@ -11,7 +11,7 @@ class Solution:
         
         while currMin < targetMin:
             
-            while i < 4 and currMin + options[i] > targetMin:
+            while currMin + options[i] > targetMin:
                 i += 1
                 
             currMin += options[i]
