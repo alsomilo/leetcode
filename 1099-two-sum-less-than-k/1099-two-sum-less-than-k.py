@@ -4,7 +4,7 @@ class Solution:
         
         nums.sort()
         lo,hi = 0,len(nums)-1
-        res=0
+        res = -1
         
         while lo < hi:
             left,right = nums[lo],nums[hi]
@@ -18,7 +18,7 @@ class Solution:
                 while lo < hi and right == nums[hi]:
                     hi -= 1
                     
-        return res if res != 0 else -1
+        return res
         
             
             
