@@ -34,9 +34,7 @@ class Solution:
             
             if abs(threeSum - target) < abs(minAbs):
                 minAbs = threeSum - target
-                
-            while i+1 < len(nums) and nums[i+1] == nums[i]:
-                i+=1
+
             i+=1
             
         return target-minAbs
