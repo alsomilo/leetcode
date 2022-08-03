@@ -58,7 +58,7 @@ class Solution:
                 maxRoom = max(maxRoom, curRoom)
                 j += 1
         '''
-        while i < len(start) and j < len(end):
+        while i < len(start):
             st = start[i] 
             et = end[j]
             
