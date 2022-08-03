@@ -44,6 +44,7 @@ class Solution:
         
         i,j = 0,0
         
+        '''
         while i < len(start) or j < len(end):
             st = start[i] if i < len(start) else float('Inf')
             et = end[j] if j < len(end) else float('Inf')
@@ -56,7 +57,20 @@ class Solution:
                 curRoom -= 1
                 maxRoom = max(maxRoom, curRoom)
                 j += 1
-                
+        '''
+        while i < len(start) and j < len(end):
+            st = start[i] 
+            et = end[j]
+            
+            if st < et:
+                curRoom += 1
+                maxRoom = max(maxRoom, curRoom)
+                i += 1
+            else:
+                curRoom -= 1
+                maxRoom = max(maxRoom, curRoom)
+                j += 1
+        
         return maxRoom
                 
             
