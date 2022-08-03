@@ -64,13 +64,11 @@ class Solution:
             
             if st < et:
                 curRoom += 1
-                maxRoom = max(maxRoom, curRoom)
                 i += 1
             else:
                 curRoom -= 1
-                maxRoom = max(maxRoom, curRoom)
                 j += 1
-        
+            maxRoom = max(maxRoom, curRoom)
         return maxRoom
                 
             
