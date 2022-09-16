@@ -1,6 +1,6 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        '''
+        #'''
         res = []
         
         def dfs(start, path, combSum):
@@ -11,12 +11,12 @@ class Solution:
                 return
             
             for i in range(start, len(candidates)):
-                dfs(start, path+[candidates[i]], combSum + candidates[i])
+                dfs(i, path+[candidates[i]], combSum + candidates[i])
                 
         dfs(0, [], 0)
         return res
+        #'''
         '''
-        
         res = []
         
         def dfs(candidates, path, combSum):
@@ -31,3 +31,4 @@ class Solution:
                 
         dfs(candidates, [], 0)
         return res
+        '''
