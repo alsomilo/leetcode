@@ -15,6 +15,7 @@ class Solution:
             nums[i] = numsC[i]
             
         '''
+
         if k % len(nums) == 0:
             return
         
@@ -43,7 +44,7 @@ class Solution:
                 
             start += 1
         
-        
-                
+
+
         
         
