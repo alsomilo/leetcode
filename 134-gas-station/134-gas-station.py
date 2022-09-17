@@ -31,8 +31,15 @@ class Solution:
         
         #if starting from the lowest point in prefixSum and travel entire array, this make a new prefixSum array based on the new net[], if the new prefixSum array's lowest point is > 0, thenwe can travel around
         
+        
+        
+        
+        
+        #first, calculate the net gain of gas at each station.
         net = [gas[i] - cost[i] for i in range(len(gas))]
         print(net)
+        
+        #since gas in the tank can be carried over to the next station, so this trigger the thought of prefixSum!! which also aggregate previous element's sum
         preSum = [0]
         for i in range(len(gas)):
             preSum.append(net[i]+preSum[-1])
@@ -41,8 +48,9 @@ class Solution:
         print(min(preSum))
         print(preSum.index(min(preSum)))
         
-        start = preSum.index(min(preSum))
-        newNet = net[start:]+net[:start]
+        #if starting from the lowest point in prefixSum and travel entire array, this make a new prefixSum array based on the new net[], if the new prefixSum array's lowest point is > 0, thenwe can travel around
+        start = preSum.index(min(preSum))   #find out the lowest point index in the current prefixSum array
+        newNet = net[start:]+net[:start]    #start from this lowest pint index , and creat new net[]
         print(newNet)
         
         preSum = [0]
