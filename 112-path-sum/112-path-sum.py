@@ -10,23 +10,15 @@ class Solution:
         
         def dfs(root, pathSum):
             
+            if not root:
+                return False
+            
             currSum = pathSum + root.val
-            left,right = False, False
             
             if not root.left and not root.right:
-                return  currSum == targetSum
+                return currSum == targetSum
             
-            if root.left:
-                left = dfs(root.left, currSum)
-                
-            if root.right:
-                right = dfs(root.right, currSum)
-                
-            
-            return left or right
+            return dfs(root.left, currSum) or dfs(root.right, currSum)
         
-        if not root:
-            return False
         
         return dfs(root, 0)
-                
