@@ -7,7 +7,7 @@
 class Solution:
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
         
-        
+        #'''
         def dfs(root, pathSum):
             
             if not root:
@@ -22,3 +22,27 @@ class Solution:
         
         
         return dfs(root, 0)
+        #'''
+        
+        
+        '''Get min path Sum
+        def dfs(root, pathSum):
+            if not root.left and not root.right:
+                return pathSum + root.val
+            
+
+            left, right = float('Inf'), float('Inf')
+            
+            if root.left:
+                left = dfs(root.left, pathSum + root.val)
+                
+            if root.right:
+                right = dfs(root.right, pathSum + root.val)
+                
+                
+            return min(left, right)
+            
+        
+        print(dfs(root, 0))
+        return dfs(root, 0)
+        '''
