@@ -19,12 +19,16 @@ class Solution:
             
             stack.append(part)
             
-            
+        '''
         for item in stack:
             #res = '/'+item+res
             res += '/'+item
+        '''    
+        
+        while stack:
+            res = '/'+stack.pop() + res
             
-        return res if stack else '/'
+        return res if res else '/'
             
                     
                 
