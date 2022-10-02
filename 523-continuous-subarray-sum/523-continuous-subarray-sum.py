@@ -1,7 +1,7 @@
 class Solution:
     def checkSubarraySum(self, nums: List[int], k: int) -> bool:
         
-        seen = {0:-1}
+        seen = {0:-1} #{0:-1}
         currSum = 0
 
         
@@ -9,7 +9,7 @@ class Solution:
 
             
             currSum += num
-            #print(f'currSum = {currSum}')
+            print(f'currSum = {currSum}')
             
             remainder = currSum % k
             
@@ -19,7 +19,7 @@ class Solution:
                     return True
             else:
                 seen[remainder] = i
-                #print(f'seen[{remainder}] = {i}')
+                print(f'seen[{remainder}] = {i}')
             
             
         return False
