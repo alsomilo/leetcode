@@ -4,7 +4,7 @@ class Solution:
         if not chars:
             return chars
         
-        stat = {}
+
         i,j = 0,0
         count = 0
         res = ''
