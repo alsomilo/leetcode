@@ -33,7 +33,16 @@ class Solution:
             return head
 
 
-        front.next, back.next = back.next, front.next
-        front.next.next, back.next.next = back.next.next, front.next.next
+        #front.next, back.next = back.next, front.next
+        #front.next.next, back.next.next = back.next.next, front.next.next
+        
+        temp = front.next
+        front.next = back.next
+        back.next = temp
+        
+        temp = front.next.next
+        front.next.next = back.next.next
+        back.next.next = temp
+        
         return dummy.next
         
