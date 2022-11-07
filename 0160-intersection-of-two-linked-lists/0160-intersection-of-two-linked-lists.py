@@ -11,9 +11,6 @@ class Solution:
         
         while ptrA or ptrB:
 
-            
-
-            
             if not ptrA:
                 #print(f'ptrA ends! move to headB')
                 ptrA = headB
@@ -26,6 +23,7 @@ class Solution:
             
             ptrA = ptrA.next
             ptrB = ptrB.next
+            
         return None
         
         
