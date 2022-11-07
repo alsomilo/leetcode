@@ -10,8 +10,7 @@ class Solution:
         ptrA, ptrB = headA, headB
         
         while ptrA or ptrB:
-            if ptrA == ptrB:
-                return ptrA
+
             
 
             
