@@ -20,10 +20,10 @@ class Solution:
         x,y = n,0
         
         for i in range(m+n):
-            if x >= m+n:
+            if x == m+n:
                 nums1[i] = nums2[y]
                 y+=1
-            elif y >= n:
+            elif y == n:
                 nums1[i] = nums1[x]
                 x+=1
             else:
