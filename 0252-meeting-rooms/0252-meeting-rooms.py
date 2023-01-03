@@ -1,6 +1,7 @@
 class Solution:
     def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
         
+        #scanning, to detect overlap (overlap happens when i consecutively increased 2 times i.e. i-j == 2:)
         
         intervals.sort(key = lambda x : x[0])
         start,end = [], []
@@ -17,7 +18,7 @@ class Solution:
             else:
                 j+=1
             
-            if i-j > 1:
+            if i-j == 2:  #or i-j > 1
                 return False
             
         return True
