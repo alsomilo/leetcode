@@ -3,6 +3,7 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        #Two pointers (same direction to the right)
         
         #move 0 to the end of the array, means set all non-zeros values to the head of the array, and fill all remaining items to be 0. 
         #Use two pointers to solve this problem:
