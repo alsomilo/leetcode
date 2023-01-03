@@ -1,7 +1,7 @@
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
         
-        #two pointers
+        #two pointers (to meet at the middle)
         
         #method 1: use two pointers: since the original input array is already sorted, the min value is at most left, and max value at most right. 
         # contine the while loop as long as i <= j, pls note we need the <= here , not <. because when i ==j, the value still need to be squred and saved into target array
