@@ -17,7 +17,7 @@ class Solution:
             else:
                 j+=1
             
-            if abs(i-j) > 1:
+            if i-j > 1:
                 return False
             
         return True
