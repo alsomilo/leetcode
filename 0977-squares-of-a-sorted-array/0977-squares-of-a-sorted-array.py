@@ -6,10 +6,10 @@ class Solution:
         while i <= j:
             
             if abs(nums[i]) < abs(nums[j]):
-                res = [nums[j] * nums[j]] + res
+                res = [nums[j] **2] + res
                 j-=1
             else:
-                res = [nums[i] * nums[i]] + res
+                res = [nums[i] **2] + res
                 i+=1
                 
         return res
