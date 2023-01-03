@@ -12,13 +12,12 @@ class Solution:
         
         while i < l and j < l:
             
-            if abs(i-j) > 1:
-                return False
-            
             if start[i] < end[j]:
                 i+=1
             else:
                 j+=1
             
+            if abs(i-j) > 1:
+                return False
             
-        return True if abs(i-j) < 2 else False
+        return True
